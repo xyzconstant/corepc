@@ -34,6 +34,7 @@ fn network__clear_banned() {
 }
 
 #[test]
+#[cfg(feature = "v30_and_below")]
 fn network__disconnect_node() {
     let (_node1, node2, _node3) = integration_test::three_node_network();
 
@@ -108,17 +109,20 @@ fn network__get_node_addresses() {
 }
 
 #[test]
+#[cfg(feature = "v30_and_below")]
 fn network__get_peer_info() {
     get_peer_info_one_node_network();
     get_peer_info_three_node_network();
 }
 
+#[cfg(feature = "v30_and_below")]
 fn get_peer_info_one_node_network() {
     let node = BitcoinD::with_wallet(Wallet::None, &[]);
     let json: GetPeerInfo = node.client.get_peer_info().expect("getpeerinfo");
     assert_eq!(json.0.len(), 0);
 }
 
+#[cfg(feature = "v30_and_below")]
 fn get_peer_info_three_node_network() {
     let (node1, node2, node3) = integration_test::three_node_network();
 

@@ -28,7 +28,7 @@
 //! |:-----------------------------------|:---------------:|:--------------------------------------:|
 //! | dumptxoutset                       | version + model |                                        |
 //! | getbestblockhash                   | version + model |                                        |
-//! | getblock                           | version + model | Includes additional 'verbose' type     |
+//! | getblock                           | version + model | TODO                                   |
 //! | getblockchaininfo                  | version + model |                                        |
 //! | getblockcount                      | version + model |                                        |
 //! | getblockfilter                     | version + model |                                        |
@@ -39,18 +39,20 @@
 //! | getchainstates                     | version + model |                                        |
 //! | getchaintips                       | version + model |                                        |
 //! | getchaintxstats                    | version + model |                                        |
-//! | getdeploymentinfo                  | version + model |                                        |
+//! | getdeploymentinfo                  | version + model | TODO                                   |
 //! | getdescriptoractivity              | version + model |                                        |
 //! | getdifficulty                      | version + model |                                        |
-//! | getmempoolancestors                | version + model |                                        |
-//! | getmempooldescendants              | version + model |                                        |
-//! | getmempoolentry                    | version + model |                                        |
-//! | getmempoolinfo                     | version + model |                                        |
-//! | getrawmempool                      | version + model | Includes additional 'verbose' type     |
+//! | getmempoolancestors                | version + model | TODO                                   |
+//! | getmempoolcluster                  | version + model | TODO                                   |
+//! | getmempooldescendants              | version + model | TODO                                   |
+//! | getmempoolentry                    | version + model | TODO                                   |
+//! | getmempoolfeeratediagram           | version + model | TODO                                   |
+//! | getmempoolinfo                     | version + model | TODO                                   |
+//! | getrawmempool                      | version + model | TODO                                   |
 //! | gettxout                           | version + model |                                        |
 //! | gettxoutproof                      | returns string  |                                        |
 //! | gettxoutsetinfo                    | version + model |                                        |
-//! | gettxspendingprevout               | version + model |                                        |
+//! | gettxspendingprevout               | version + model | TODO                                   |
 //! | importmempool                      | returns nothing |                                        |
 //! | loadtxoutset                       | version + model | UNTESTED                               |
 //! | preciousblock                      | returns nothing |                                        |
@@ -74,7 +76,7 @@
 //! | getmemoryinfo                      | version         |                                        |
 //! | getrpcinfo                         | version         |                                        |
 //! | help                               | returns string  |                                        |
-//! | logging                            | version         |                                        |
+//! | logging                            | version         | TODO                                   |
 //! | stop                               | returns string  |                                        |
 //! | uptime                             | returns numeric |                                        |
 //!
@@ -100,6 +102,7 @@
 //!
 //! | JSON-RPC Method Name               | Returns         | Notes                                  |
 //! |:-----------------------------------|:---------------:|:--------------------------------------:|
+//! | abortprivatebroadcast              | version + model | TODO                                   |
 //! | addnode                            | returns nothing |                                        |
 //! | clearbanned                        | returns nothing |                                        |
 //! | disconnectnode                     | returns nothing |                                        |
@@ -109,7 +112,8 @@
 //! | getnettotals                       | version         |                                        |
 //! | getnetworkinfo                     | version + model |                                        |
 //! | getnodeaddresses                   | version         |                                        |
-//! | getpeerinfo                        | version         |                                        |
+//! | getpeerinfo                        | version         | TODO                                   |
+//! | getprivatebroadcastinfo            | version + model | TODO                                   |
 //! | listbanned                         | version         |                                        |
 //! | ping                               | returns nothing |                                        |
 //! | setban                             | returns nothing |                                        |
@@ -191,7 +195,7 @@
 //! | getreceivedbyaddress               | version + model |                                        |
 //! | getreceivedbylabel                 | version + model |                                        |
 //! | gettransaction                     | version + model |                                        |
-//! | getwalletinfo                      | version + model |                                        |
+//! | getwalletinfo                      | version + model | TODO                                   |
 //! | importdescriptors                  | version         |                                        |
 //! | importprunedfunds                  | returns nothing |                                        |
 //! | keypoolrefill                      | returns nothing |                                        |
@@ -199,7 +203,7 @@
 //! | listdescriptors                    | version         |                                        |
 //! | listlabels                         | version         |                                        |
 //! | listlockunspent                    | version + model |                                        |
-//! | migratewallet                      | version         | Untested in v30, unchanged from v29    |
+//! | migratewallet                      | version         | Untested in v31, unchanged from v30    |
 //! | psbtbumpfee                        | version + model |                                        |
 //! | listreceivedbyaddress              | version + model |                                        |
 //! | listreceivedbylabel                | version + model |                                        |
@@ -218,7 +222,6 @@
 //! | sendmany                           | version + model |                                        |
 //! | sendtoaddress                      | version + model |                                        |
 //! | setlabel                           | returns nothing |                                        |
-//! | settxfee                           | version         |                                        |
 //! | setwalletflag                      | version         |                                        |
 //! | signmessage                        | version + model |                                        |
 //! | signrawtransactionwithwallet       | version + model |                                        |
@@ -291,7 +294,7 @@ pub use crate::{
         PartialSignatureError, PruneBlockchain, RawFeeDetail, RawFeeRange, RawTransactionError,
         RawTransactionInput, RawTransactionOutput, RescanBlockchain, ScanTxOutSetAbort,
         ScanTxOutSetError, ScanTxOutSetStatus, ScriptType, SendRawTransaction, SendToAddress,
-        SetNetworkActive, SetTxFee, SignFail, SignFailError, SignMessage, SignMessageWithPrivKey,
+        SetNetworkActive, SignFail, SignFailError, SignMessage, SignMessageWithPrivKey,
         SignRawTransaction, SignRawTransactionError, SignRawTransactionWithKey,
         SignRawTransactionWithWallet, TransactionCategory, UploadTarget, ValidateAddress,
         ValidateAddressError, VerifyChain, VerifyMessage, VerifyTxOutProof, WaitForBlock,

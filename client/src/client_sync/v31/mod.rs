@@ -26,7 +26,7 @@ pub use crate::client_sync::{
 };
 
 crate::define_jsonrpc_bitreq_client!("v31");
-crate::impl_client_check_expected_server_version!({ [300000, 300100, 300200] });
+crate::impl_client_check_expected_server_version!({ [310000] });
 
 // == Blockchain ==
 crate::impl_client_v29__dump_tx_out_set!();
@@ -198,7 +198,6 @@ crate::impl_client_v24__send_all!();
 crate::impl_client_v17__send_many!();
 crate::impl_client_v21__send_many_verbose!();
 crate::impl_client_v17__send_to_address!();
-crate::impl_client_v17__set_tx_fee!();
 crate::impl_client_v19__set_wallet_flag!();
 crate::impl_client_v17__sign_message!();
 crate::impl_client_v17__sign_raw_transaction_with_wallet!();

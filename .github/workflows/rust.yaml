@@ -127,6 +127,7 @@ jobs:
       matrix:
         version:
           [
+            "31_0",
             "30_2",
             # Don't integration test v30.0 and v30.1 as the binaries have been
             # removed due to a wallet migration bug.

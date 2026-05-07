@@ -10,6 +10,7 @@ use bitcoind::{mtype, TemplateRequest, TemplateRules};
 use integration_test::{BitcoinD, BitcoinDExt as _, Wallet}; // All the version specific types.
 
 #[test]
+#[cfg(feature = "v30_and_below")]
 fn mining__get_block_template__modelled() {
     // Requires connected nodes otherwise the RPC call errors.
     let (node1, node2, node3) = integration_test::three_node_network();

@@ -24,6 +24,7 @@ use integration_test::{BitcoinD, BitcoinDExt as _, Wallet};
 
 #[test]
 #[cfg(not(feature = "v21_and_below"))]
+#[cfg(feature = "v30_and_below")]
 fn hidden__add_connection() {
     let (listener, dialer, _node3) = integration_test::three_node_network();
 
@@ -99,6 +100,7 @@ fn hidden__estimate_raw_fee__modelled() {
 
 #[test]
 #[cfg(not(feature = "v28_and_below"))]
+#[cfg(feature = "v30_and_below")]
 fn hidden__get_orphan_txs__modelled() {
     // We use node1 to send node2 orphan transactions via a P2P `tx` message.
     let (node1, node2, _node3) = integration_test::three_node_network();
